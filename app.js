@@ -4,6 +4,7 @@ import { XRControllerModelFactory } from '../../libs/three/jsm/XRControllerModel
 import { BoxLineGeometry } from '../../libs/three/jsm/BoxLineGeometry.js';
 import { Stats } from '../../libs/stats.module.js';
 import { OrbitControls } from '../../libs/three/jsm/OrbitControls.js';
+import {IcosahedronGeometry, LineBasicMaterial} from 'three';
 
 
 class App{
@@ -52,11 +53,28 @@ class App{
 	}
 
 	initScene(){
+		this.radius = 0.08;
+		this.room = new LineSegments(
+			new BoxLineGeometry(6,6,6,10,10,10),
+			new LineBasicMaterial({color: "0x808080"})
+		);
+		this.room.geometry.translate(0,3,0)
+		this.scene.add(this.room);
+		const geometry = new IcosahedronBufferGeometry(this.radius, 2);
+		for(let i = 0; i < 200; i++){
+			const object = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({color: Math.random() * 0xFFFFFF}))
+			object.postion.x = this.random(-2,2);
+			object.postion.y = this.random(-2,2);
+			object.postion.z = this.random(-2,2);
+
+			this.room.add(object);
+		}
 
 	}
 
 	setupXR(){
-
+		this.renderer.xr.enable = true
+		document.body.appendChild(VRButton.createButton(this.renderer));
 	}
 
 	resize(){
