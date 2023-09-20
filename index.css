@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700&family=Manrope:wght@200;400;700&display=swap");
+
+/* Reset some default styles */
+* {
+  font-family: "Inconsolata", monospace;
+  margin: 0;
+  padding: 0;
+}
+body {
+  /* color: #292d3e; */
+  background-color: #292d3e;
+  display: flex;
+  flex-direction: column;
+}
+#main-heading {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: 20vh;
+  background-color: #292d3e;
+  color: #fff;
+}
+ul {
+  list-style: none;
+}
+
+/* Style the navigation bar */
+nav {
+  background-color: #292d3e;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav li {
+  margin: 0 20px;
+}
+
+/* Style the nested list */
+nav ul ul {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the social media icons */
+nav ul ul img {
+  width: 20px;
+  height: 5vh;
+  margin: 0 5px;
+  color: white;
+}
+
+/* Hover effect on list items */
+
+/* Adjust styles for smaller screens */
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav li {
+    margin: 5px 0;
+  }
+}
