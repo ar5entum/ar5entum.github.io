@@ -1,19 +1,11 @@
-// Define an array of texts to cycle through
-const textArray = [
-    "Text 1",
-    "Text 2",
-    "Text 3"
-];
+// Get references to the button and the element to change text
+const changeTextButton = document.getElementById('changeTextButton');
+const textToChange = document.getElementById('textToChange');
 
-const textContainer = document.getElementById("changing-text");
-
-let currentIndex = 0;
-
-// Function to change the text on an interval
+// Define a function to change the text
 function changeText() {
-    textContainer.textContent = textArray[currentIndex];
-    currentIndex = (currentIndex + 1) % textArray.length;
+    textToChange.textContent = 'Text has been changed!';
 }
 
-// Change the text every 3 seconds (3000 milliseconds)
-setInterval(changeText, 3000);
+// Add a click event listener to the button
+changeTextButton.addEventListener('click', changeText);
