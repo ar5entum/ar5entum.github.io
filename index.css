@@ -59,6 +59,15 @@ nav ul ul img {
   margin: 0 5px;
   color: white;
 }
+.changingTextContainer {
+display: flex;
+height: 90vh;
+width: 100vw;
+justify-content: center;
+align-items: center;
+font-size: 30px;
+}
+
 
 /* Hover effect on list items */
 
